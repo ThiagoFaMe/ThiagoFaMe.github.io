@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thiago Facchin | Software Engineer</title>
+  <meta name="description" content="Portfolio de Thiago Facchin — Ingeniero de Software en formación, Full Stack Developer. Proyectos, habilidades y experiencia en desarrollo de software.">
+  <meta name="author" content="Thiago Facchin">
+  <meta property="og:title" content="Thiago Facchin | Software Engineer">
+  <meta property="og:description" content="Ingeniero de Software en formación. Full Stack Developer.">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Ambient background -->
+  <div class="ambient-bg">
+    <div class="ambient-orb"></div>
+    <div class="ambient-orb"></div>
+  </div>
+
+  <!-- Cursor glow -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- Floating dock nav -->
+  <nav class="dock-nav" id="dockNav">
+    <a href="#top">Inicio</a>
+    <a href="#about">Sobre mí</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Proyectos</a>
+    <a href="#experience">Experiencia</a>
+    <a href="#contact">Contacto</a>
+  </nav>
+
+  <!-- Page -->
+  <main class="page" id="top">
+    <header class="page-header">
+      <span class="logo">TF</span>
+    </header>
+
+    <div class="bento">
+
+      <!-- ═══ ROW 1-2: Hero + Avatar + Status + Location ═══ -->
+
+      <!-- HERO — 2col × 2row -->
+      <div class="card card-hero col-2 row-2" id="about">
+        <div class="card-inner">
+          <span class="hero-greeting"><span class="wave">👋</span> Hola, soy</span>
+          <h1 class="hero-name">
+            Thiago<br><span class="gradient">Facchin</span>
+          </h1>
+          <div class="hero-typing">
+            <span id="typingText"></span><span class="cursor"></span>
+          </div>
+          <p class="hero-tagline">Creando software que resuelve problemas reales.</p>
+        </div>
+      </div>
+
+      <!-- AVATAR — 1col × 2row -->
+      <div class="card card-avatar row-2">
+        <div class="card-inner">
+          <div class="avatar-frame">
+            <div class="avatar-glow"></div>
+            <div class="avatar-img" id="avatarImg">TF</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STATUS — 1col × 1row -->
+      <div class="card card-status">
+        <div class="card-inner">
+          <div class="status-dot-container">
+            <div class="status-dot"></div>
+          </div>
+          <span class="status-text">Disponible</span>
+          <span class="status-sub">Buscando oportunidades en ingeniería</span>
+        </div>
+      </div>
+
+      <!-- LOCATION — 1col × 1row -->
+      <div class="card card-location">
+        <div class="card-inner">
+          <div class="location-pin">
+            <span class="pin-icon">📍</span>
+          </div>
+          <span class="location-city">Córdoba</span>
+          <span class="location-country">Argentina</span>
+        </div>
+      </div>
+
+      <!-- ═══ ROW 3: About + Languages + Education ═══ -->
+
+      <!-- ABOUT — 2col -->
+      <div class="card card-about col-2">
+        <div class="card-inner">
+          <span class="about-label">Sobre mí</span>
+          <p class="about-text">
+            <strong>Analista de Software</strong> recibido, cursando el último año de 
+            <strong>Ingeniería de Software</strong>. Con +4 años en IT, estoy enfocado 
+            en dar el salto hacia roles de desarrollo e ingeniería. Full stack, 
+            automatización y soluciones que impactan.
+          </p>
+        </div>
+      </div>
+
+      <!-- LANGUAGES — 1col -->
+      <div class="card card-languages">
+        <div class="card-inner">
+          <span class="lang-label">Idiomas</span>
+          <div class="lang-list">
+            <div class="lang-item">
+              <span class="lang-flag">🇪🇸</span>
+              <span class="lang-name">ES</span>
+            </div>
+            <div class="lang-item">
+              <span class="lang-flag">🇧🇷</span>
+              <span class="lang-name">PT</span>
+            </div>
+            <div class="lang-item">
+              <span class="lang-flag">🇺🇸</span>
+              <span class="lang-name">EN</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EDUCATION — 1col -->
+      <div class="card card-education">
+        <div class="card-inner">
+          <span class="edu-label">Educación</span>
+          <div class="edu-list">
+            <div class="edu-item">
+              <span class="edu-icon">🎓</span>
+              <div class="edu-info">
+                <h4>Ing. de Software</h4>
+                <p>Siglo 21 · 2023-2026</p>
+                <span class="edu-badge progress">Último año</span>
+              </div>
+            </div>
+            <div class="edu-item">
+              <span class="edu-icon">📜</span>
+              <div class="edu-info">
+                <h4>Analista de Software</h4>
+                <p>Título intermedio</p>
+                <span class="edu-badge done">Completado</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ ROW 4: Stats ═══ -->
+
+      <!-- STATS — 2col -->
+      <div class="card card-stats col-2">
+        <div class="card-inner">
+          <div class="stat-item">
+            <span class="stat-number" data-target="4">0</span>
+            <span class="stat-label">Años en IT</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="3">0</span>
+            <span class="stat-label">Idiomas</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="2">0</span>
+            <span class="stat-label">Proyectos</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="2026">0</span>
+            <span class="stat-label">Graduación</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- MARQUEE — 2col (remainder) -->
+      <div class="card card-marquee col-2" id="skills">
+        <div class="card-inner">
+          <div class="marquee-label">Tech Stack</div>
+          <div class="marquee-wrapper">
+            <div class="marquee-track">
+              <!-- Set 1 -->
+              <span class="marquee-item"><i class="devicon-java-plain"></i> Java</span>
+              <span class="marquee-dot"></span>
+              <span class="marquee-item"><i class="devicon-python-plain"></i> Python</span>
+              <span class="marquee-dot"></span>
+              <span class="marquee-item"><i class="devicon-nodejs-plain"></i> Node.js</span>
+              <span class="marquee-dot"></span>
+              <span class="marquee-item"><i class="devicon-spring-original"></i> Spring Boot</span>
+              <span class="marquee-dot"></span>
+              <span class="marquee-item"><i class="devicon-django-plain"></i> Django</span>
+              <span class="marquee-dot"></span>
+              <span class="marquee-item"><i class="devicon-dot-net-plain"></i> .NET</span>
+              <span class="marquee-dot"></span>
+              <span class="marquee-item"><i class="devicon-react-original"></i> React</span>
+              <span class="marquee-dot"></span>
+              <span class="marquee-item"><i class="devicon-javascript-plain"></i> JavaScript</span>
+              <span class="marquee-dot"></span>
+              <span class="marquee-item"><i class="devicon-html5-plain"></i> HTML5</span>
+              <span class="marquee-dot"></span>
+              <span class="marquee-item"><i class="devicon-css3-plain"></i> CSS3</span>
+              <span class="marquee-dot"></span>
+              <span class="marquee-item"><i class="devicon-docker-plain"></i> Docker</span>
+              <span class="marquee-dot"></span>
+              <span class="marquee-item"><i class="devicon-git-plain"></i> Git</span>
+              <span class="marquee-dot"></span>
+              <span class="marquee-item"><i class="devicon-mysql-plain"></i> MySQL</span>
+              <span class="marquee-dot"></span>
+              <span class="marquee-item"><i class="devicon-amazonwebservices-plain-wordmark"></i> DynamoDB</span>
+              <span class="marquee-dot"></span>
+              <span class="marquee-item">⚡ n8n</span>
+              <span class="marquee-dot"></span>
+              <!-- Set 2 (duplicate for seamless loop) -->
+              <span class="marquee-item"><i class="devicon-java-plain"></i> Java</span>
+              <span class="marquee-dot"></span>
+              <span class="marquee-item"><i class="devicon-python-plain"></i> Python</span>
+              <span class="marquee-dot"></span>
+              <span class="marquee-item"><i class="devicon-nodejs-plain"></i> Node.js</span>
+              <span class="marquee-dot"></span>
+              <span class="marquee-item"><i class="devicon-spring-original"></i> Spring Boot</span>
+              <span class="marquee-dot"></span>
+              <span class="marquee-item"><i class="devicon-django-plain"></i> Django</span>
+              <span class="marquee-dot"></span>
+              <span class="marquee-item"><i class="devicon-dot-net-plain"></i> .NET</span>
+              <span class="marquee-dot"></span>
+              <span class="marquee-item"><i class="devicon-react-original"></i> React</span>
+              <span class="marquee-dot"></span>
+              <span class="marquee-item"><i class="devicon-javascript-plain"></i> JavaScript</span>
+              <span class="marquee-dot"></span>
+              <span class="marquee-item"><i class="devicon-html5-plain"></i> HTML5</span>
+              <span class="marquee-dot"></span>
+              <span class="marquee-item"><i class="devicon-css3-plain"></i> CSS3</span>
+              <span class="marquee-dot"></span>
+              <span class="marquee-item"><i class="devicon-docker-plain"></i> Docker</span>
+              <span class="marquee-dot"></span>
+              <span class="marquee-item"><i class="devicon-git-plain"></i> Git</span>
+              <span class="marquee-dot"></span>
+              <span class="marquee-item"><i class="devicon-mysql-plain"></i> MySQL</span>
+              <span class="marquee-dot"></span>
+              <span class="marquee-item"><i class="devicon-amazonwebservices-plain-wordmark"></i> DynamoDB</span>
+              <span class="marquee-dot"></span>
+              <span class="marquee-item">⚡ n8n</span>
+              <span class="marquee-dot"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ ROW 5-6: Projects ═══ -->
+
+      <!-- PROJECT 1 — 2col × 2row -->
+      <div class="card card-project col-2 row-2" id="projects">
+        <div class="card-inner">
+          <div class="project-image-wrap">
+            <img src="assets/images/automation.png" alt="Automatización Recibos de Sueldo">
+            <span class="project-badge dev">En desarrollo</span>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Automatización Recibos de Sueldo</h3>
+            <p class="project-desc">
+              Sistema de automatización con n8n para el procesamiento y distribución inteligente 
+              de recibos de sueldo. Workflows que eliminan tareas manuales repetitivas.
+            </p>
+            <div class="project-tags">
+              <span>n8n</span>
+              <span>Node.js</span>
+              <span>APIs REST</span>
+              <span>Workflows</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PROJECT 2 — 2col × 2row -->
+      <div class="card card-project col-2 row-2">
+        <div class="card-inner">
+          <div class="project-image-wrap">
+            <img src="assets/images/turistapp.png" alt="Turistapp">
+            <span class="project-badge soon">Próximamente</span>
+          </div>
+          <div class="project-info">
+            <h3 class="project-title">Turistapp</h3>
+            <p class="project-desc">
+              Proyecto de tesis — Aplicación de turismo para conectar viajeros con experiencias 
+              locales. En fase de documentación y planificación técnica.
+            </p>
+            <div class="project-tags">
+              <span>Tesis</span>
+              <span>UX/UI</span>
+              <span>Mobile</span>
+              <span>Full Stack</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ ROW 7-8: Experience + Contact ═══ -->
+
+      <!-- EXPERIENCE — 2col × 2row -->
+      <div class="card card-experience col-2 row-2" id="experience">
+        <div class="card-inner">
+          <span class="exp-label">Experiencia</span>
+          <div class="exp-timeline">
+            <div class="exp-item">
+              <div class="exp-dot-line">
+                <div class="exp-dot"></div>
+                <div class="exp-line"></div>
+              </div>
+              <div class="exp-content">
+                <div class="exp-role">Business Developer</div>
+                <div class="exp-company">Vippinn</div>
+                <div class="exp-date">Feb 2025 — Actualidad</div>
+              </div>
+            </div>
+            <div class="exp-item">
+              <div class="exp-dot-line">
+                <div class="exp-dot"></div>
+                <div class="exp-line"></div>
+              </div>
+              <div class="exp-content">
+                <div class="exp-role">Soporte IT / Ventas</div>
+                <div class="exp-company">Com-Tech Soluciones</div>
+                <div class="exp-date">Ago 2020 — Ene 2025</div>
+              </div>
+            </div>
+            <div class="exp-item">
+              <div class="exp-dot-line">
+                <div class="exp-dot"></div>
+              </div>
+              <div class="exp-content">
+                <div class="exp-role">Data Entry</div>
+                <div class="exp-company">Ministerio de Salud</div>
+                <div class="exp-date">Sep 2019 — Dic 2019</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTACT — 2col × 2row -->
+      <div class="card card-contact col-2 row-2" id="contact">
+        <div class="card-inner">
+          <span class="contact-label">Contacto</span>
+          <h2 class="contact-heading">
+            <span class="gradient">Hablemos.</span>
+          </h2>
+          <div class="contact-links">
+            <a href="mailto:thiagofacchinmendonca@gmail.com" class="contact-link">
+              <div class="contact-link-icon">✉️</div>
+              <span class="contact-link-text">thiagofacchinmendonca@gmail.com</span>
+            </a>
+            <a href="tel:+543515280405" class="contact-link">
+              <div class="contact-link-icon">📱</div>
+              <span class="contact-link-text">+54 351 528 0405</span>
+            </a>
+            <a href="https://www.linkedin.com/in/thiago-facchin-mendonca-5b28541ab/" target="_blank" rel="noopener noreferrer" class="contact-link">
+              <div class="contact-link-icon">💼</div>
+              <span class="contact-link-text">LinkedIn — Thiago Facchin</span>
+            </a>
+          </div>
+          <a href="mailto:thiagofacchinmendonca@gmail.com?subject=Contacto%20desde%20Portfolio" class="contact-cta">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Enviar mensaje
+          </a>
+        </div>
+      </div>
+
+    </div><!-- /bento -->
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
