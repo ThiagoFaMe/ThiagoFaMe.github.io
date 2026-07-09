@@ -1,13 +1,13 @@
 /* ============================================
    MAIN.JS — Bento Portfolio
-   Cursor glow, 3D tilt, typing, scroll reveal
+   Cursor glow, 3D tilt, typing, scroll reveal, counter
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
 
   const cards = document.querySelectorAll('.card');
   const cursorGlow = document.getElementById('cursorGlow');
-  const isMobile = window.matchMedia('(max-width: 640px)').matches;
+  const isMobile = window.matchMedia('(max-width: 600px)').matches;
 
   // ==================== CURSOR GLOW ====================
   if (!isMobile && cursorGlow) {
@@ -18,31 +18,26 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==================== CARD MOUSE GLOW + 3D TILT ====================
-  cards.forEach(card => {
-    if (isMobile) return;
+  if (!isMobile) {
+    cards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
 
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
+        card.style.setProperty('--mouse-x', x + 'px');
+        card.style.setProperty('--mouse-y', y + 'px');
 
-      // Internal glow position
-      card.style.setProperty('--mouse-x', x + 'px');
-      card.style.setProperty('--mouse-y', y + 'px');
+        const tiltX = ((y - rect.height / 2) / rect.height) * -4;
+        const tiltY = ((x - rect.width / 2) / rect.width) * 4;
+        card.style.transform = `perspective(900px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(1.015)`;
+      });
 
-      // 3D tilt
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-      const tiltX = ((y - centerY) / centerY) * -5;
-      const tiltY = ((x - centerX) / centerX) * 5;
-
-      card.style.transform = `perspective(800px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(1.02)`;
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = '';
+      });
     });
-
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = '';
-    });
-  });
+  }
 
   // ==================== TYPING ANIMATION ====================
   const typingEl = document.getElementById('typingText');
@@ -50,26 +45,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const words = [
       'Software Engineer',
       'Full Stack Developer',
-      'Analista de Software',
-      'Automation Enthusiast'
+      'Automation Enthusiast',
+      'Analista de Software'
     ];
-    let wordIdx = 0;
-    let charIdx = 0;
-    let deleting = false;
-    let speed = 100;
+    let wordIdx = 0, charIdx = 0, deleting = false, speed = 100;
 
     function tick() {
       const word = words[wordIdx];
+      typingEl.textContent = deleting
+        ? word.substring(0, charIdx - 1)
+        : word.substring(0, charIdx + 1);
 
-      if (deleting) {
-        typingEl.textContent = word.substring(0, charIdx - 1);
-        charIdx--;
-        speed = 40;
-      } else {
-        typingEl.textContent = word.substring(0, charIdx + 1);
-        charIdx++;
-        speed = 90;
-      }
+      deleting ? charIdx-- : charIdx++;
+      speed = deleting ? 40 : 90;
 
       if (!deleting && charIdx === word.length) {
         speed = 2200;
@@ -82,7 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
       setTimeout(tick, speed);
     }
-
     tick();
   }
 
@@ -96,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     },
-    { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
+    { threshold: 0.06, rootMargin: '0px 0px -30px 0px' }
   );
 
   cards.forEach(card => revealObserver.observe(card));
@@ -108,10 +95,8 @@ document.addEventListener('DOMContentLoaded', () => {
     (entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          const el = entry.target;
-          const target = parseInt(el.dataset.target);
-          animateCounter(el, target);
-          counterObserver.unobserve(el);
+          animateCounter(entry.target, parseInt(entry.target.dataset.target));
+          counterObserver.unobserve(entry.target);
         }
       });
     },
@@ -121,66 +106,20 @@ document.addEventListener('DOMContentLoaded', () => {
   statNumbers.forEach(el => counterObserver.observe(el));
 
   function animateCounter(el, target) {
-    const duration = 1500;
+    const duration = 1400;
     const start = performance.now();
-    const isYears = target < 100;
+    const isSmall = target < 100;
 
     function update(now) {
-      const elapsed = now - start;
-      const progress = Math.min(elapsed / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
-
-      let current = Math.round(eased * target);
-      el.textContent = isYears ? current + '+' : current;
-
-      if (progress < 1) {
-        requestAnimationFrame(update);
-      } else {
-        el.textContent = isYears ? target + '+' : target;
-      }
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.round(eased * target);
+      el.textContent = isSmall ? current + '+' : current;
+      if (progress < 1) requestAnimationFrame(update);
+      else el.textContent = isSmall ? target + '+' : target;
     }
 
     requestAnimationFrame(update);
   }
-
-  // ==================== DOCK NAV — Active link ====================
-  const navLinks = document.querySelectorAll('.dock-nav a');
-  const sections = document.querySelectorAll('[id]');
-
-  function updateActiveNav() {
-    const scrollY = window.scrollY + 200;
-
-    let currentId = '';
-    sections.forEach(section => {
-      if (section.offsetTop <= scrollY) {
-        currentId = section.id;
-      }
-    });
-
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === '#' + currentId) {
-        link.classList.add('active');
-      }
-    });
-  }
-
-  window.addEventListener('scroll', updateActiveNav, { passive: true });
-  updateActiveNav();
-
-  // ==================== SMOOTH SCROLL ====================
-  navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const targetId = link.getAttribute('href');
-      const targetEl = document.querySelector(targetId);
-      if (targetEl) {
-        window.scrollTo({
-          top: targetEl.offsetTop - 20,
-          behavior: 'smooth'
-        });
-      }
-    });
-  });
 
 });

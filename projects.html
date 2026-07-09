@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyectos | Thiago Facchin</title>
+  <meta name="description" content="Proyectos de Thiago Facchin — Automatización de Recibos de Sueldo con n8n y Turistapp.">
+  <meta name="author" content="Thiago Facchin">
+  <meta property="og:title" content="Proyectos | Thiago Facchin">
+  <meta property="og:description" content="Proyectos de desarrollo de software de Thiago Facchin.">
+  <meta property="og:type" content="website">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Ambient background -->
+  <div class="ambient-bg">
+    <div class="ambient-orb"></div>
+    <div class="ambient-orb"></div>
+  </div>
+
+  <!-- Cursor glow -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- Top nav bar -->
+  <nav class="top-nav" id="topNav">
+    <div class="top-nav-inner">
+      <div class="top-nav-left">
+        <span class="nav-name">Thiago Facchin</span>
+        <span class="nav-title">Software Engineer</span>
+      </div>
+      <div class="top-nav-right">
+        <a href="index.html" class="nav-link">Sobre mí</a>
+        <a href="projects.html" class="nav-link active">Proyectos</a>
+        <a href="https://www.linkedin.com/in/thiago-facchin-mendonca-5b28541ab/" target="_blank" rel="noopener noreferrer" class="nav-link nav-link-ext">LinkedIn ↗</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page -->
+  <main class="page">
+
+    <div class="projects-header">
+      <p class="projects-label">Proyectos</p>
+      <h1 class="projects-title">Lo que estoy<br><span class="gradient">construyendo.</span></h1>
+      <p class="projects-subtitle">Proyectos reales, problemas reales. Cada uno representa un paso en mi camino hacia la ingeniería de software.</p>
+    </div>
+
+    <div class="projects-grid">
+
+      <!-- PROJECT 1 -->
+      <article class="project-card">
+        <div class="project-image-wrap">
+          <img src="assets/images/automation.png" alt="Automatización Recibos de Sueldo">
+          <span class="project-badge dev">En desarrollo</span>
+        </div>
+        <div class="project-info">
+          <h2 class="project-title">Automatización Recibos de Sueldo</h2>
+          <p class="project-desc">
+            Sistema de automatización con n8n para el procesamiento y distribución inteligente
+            de recibos de sueldo. Workflows que eliminan tareas manuales repetitivas y
+            reducen errores humanos en la gestión de RRHH.
+          </p>
+          <div class="project-tags">
+            <span>n8n</span>
+            <span>Node.js</span>
+            <span>APIs REST</span>
+            <span>Workflows</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- PROJECT 2 -->
+      <article class="project-card">
+        <div class="project-image-wrap">
+          <img src="assets/images/turistapp.png" alt="Turistapp">
+          <span class="project-badge soon">Próximamente</span>
+        </div>
+        <div class="project-info">
+          <h2 class="project-title">Turistapp</h2>
+          <p class="project-desc">
+            Proyecto de tesis — Aplicación de turismo para conectar viajeros con experiencias
+            locales. En fase de documentación y planificación técnica. Arquitectura mobile-first
+            con foco en UX y accesibilidad.
+          </p>
+          <div class="project-tags">
+            <span>Tesis</span>
+            <span>UX/UI</span>
+            <span>Mobile</span>
+            <span>Full Stack</span>
+          </div>
+        </div>
+      </article>
+
+    </div><!-- /projects-grid -->
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
