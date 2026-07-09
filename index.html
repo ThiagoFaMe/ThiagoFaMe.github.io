@@ -27,29 +27,31 @@
   <!-- Cursor glow -->
   <div class="cursor-glow" id="cursorGlow"></div>
 
-  <!-- Floating dock nav -->
-  <nav class="dock-nav" id="dockNav">
-    <a href="#top">Inicio</a>
-    <a href="#about">Sobre mí</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Proyectos</a>
-    <a href="#experience">Experiencia</a>
-    <a href="#contact">Contacto</a>
+  <!-- Top nav bar -->
+  <nav class="top-nav" id="topNav">
+    <div class="top-nav-inner">
+      <div class="top-nav-left">
+        <span class="nav-name">Thiago Facchin</span>
+        <span class="nav-title">Software Engineer</span>
+      </div>
+      <div class="top-nav-right">
+        <a href="index.html" class="nav-link active">Sobre mí</a>
+        <a href="projects.html" class="nav-link">Proyectos</a>
+        <a href="https://www.linkedin.com/in/thiago-facchin-mendonca-5b28541ab/" target="_blank" rel="noopener noreferrer" class="nav-link nav-link-ext">LinkedIn ↗</a>
+      </div>
+    </div>
   </nav>
 
   <!-- Page -->
-  <main class="page" id="top">
-    <header class="page-header">
-      <span class="logo">TF</span>
-    </header>
+  <main class="page">
 
     <div class="bento">
 
-      <!-- ═══ ROW 1-2: Hero + Avatar + Status + Location ═══ -->
+      <!-- ═══ ROW 1-2: Hero + Avatar ═══ -->
 
       <!-- HERO — 2col × 2row -->
-      <div class="card card-hero col-2 row-2" id="about">
-        <div class="card-inner">
+      <div class="card card-hero col-2 row-2">
+        <div class="card-inner card-inner--bottom">
           <span class="hero-greeting"><span class="wave">👋</span> Hola, soy</span>
           <h1 class="hero-name">
             Thiago<br><span class="gradient">Facchin</span>
@@ -63,7 +65,7 @@
 
       <!-- AVATAR — 1col × 2row -->
       <div class="card card-avatar row-2">
-        <div class="card-inner">
+        <div class="card-inner" style="padding:0;">
           <div class="avatar-frame">
             <div class="avatar-glow"></div>
             <div class="avatar-img" id="avatarImg">TF</div>
@@ -71,94 +73,24 @@
         </div>
       </div>
 
-      <!-- STATUS — 1col × 1row -->
-      <div class="card card-status">
-        <div class="card-inner">
-          <div class="status-dot-container">
-            <div class="status-dot"></div>
-          </div>
-          <span class="status-text">Disponible</span>
-          <span class="status-sub">Buscando oportunidades en ingeniería</span>
-        </div>
-      </div>
-
-      <!-- LOCATION — 1col × 1row -->
-      <div class="card card-location">
-        <div class="card-inner">
-          <div class="location-pin">
-            <span class="pin-icon">📍</span>
-          </div>
-          <span class="location-city">Córdoba</span>
-          <span class="location-country">Argentina</span>
-        </div>
-      </div>
-
-      <!-- ═══ ROW 3: About + Languages + Education ═══ -->
-
-      <!-- ABOUT — 2col -->
-      <div class="card card-about col-2">
-        <div class="card-inner">
-          <span class="about-label">Sobre mí</span>
+      <!-- ABOUT — 1col × 2row -->
+      <div class="card card-about row-2">
+        <div class="card-inner card-inner--bottom">
+          <span class="section-label">Sobre mí</span>
           <p class="about-text">
-            <strong>Analista de Software</strong> recibido, cursando el último año de 
-            <strong>Ingeniería de Software</strong>. Con +4 años en IT, estoy enfocado 
-            en dar el salto hacia roles de desarrollo e ingeniería. Full stack, 
+            <strong>Analista de Software</strong> recibido, cursando el último año de
+            <strong>Ingeniería de Software</strong>. Con +4 años en IT, enfocado en
+            dar el salto hacia roles de desarrollo e ingeniería. Full stack,
             automatización y soluciones que impactan.
           </p>
         </div>
       </div>
 
-      <!-- LANGUAGES — 1col -->
-      <div class="card card-languages">
-        <div class="card-inner">
-          <span class="lang-label">Idiomas</span>
-          <div class="lang-list">
-            <div class="lang-item">
-              <span class="lang-flag">🇪🇸</span>
-              <span class="lang-name">ES</span>
-            </div>
-            <div class="lang-item">
-              <span class="lang-flag">🇧🇷</span>
-              <span class="lang-name">PT</span>
-            </div>
-            <div class="lang-item">
-              <span class="lang-flag">🇺🇸</span>
-              <span class="lang-name">EN</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- EDUCATION — 1col -->
-      <div class="card card-education">
-        <div class="card-inner">
-          <span class="edu-label">Educación</span>
-          <div class="edu-list">
-            <div class="edu-item">
-              <span class="edu-icon">🎓</span>
-              <div class="edu-info">
-                <h4>Ing. de Software</h4>
-                <p>Siglo 21 · 2023-2026</p>
-                <span class="edu-badge progress">Último año</span>
-              </div>
-            </div>
-            <div class="edu-item">
-              <span class="edu-icon">📜</span>
-              <div class="edu-info">
-                <h4>Analista de Software</h4>
-                <p>Título intermedio</p>
-                <span class="edu-badge done">Completado</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ═══ ROW 4: Stats ═══ -->
+      <!-- ═══ ROW 3: Stats + Languages + Education ═══ -->
 
       <!-- STATS — 2col -->
       <div class="card card-stats col-2">
-        <div class="card-inner">
+        <div class="card-inner card-inner--stats">
           <div class="stat-item">
             <span class="stat-number" data-target="4">0</span>
             <span class="stat-label">Años en IT</span>
@@ -178,8 +110,57 @@
         </div>
       </div>
 
-      <!-- MARQUEE — 2col (remainder) -->
-      <div class="card card-marquee col-2" id="skills">
+      <!-- LANGUAGES — 1col -->
+      <div class="card card-languages">
+        <div class="card-inner card-inner--bottom">
+          <span class="section-label">Idiomas</span>
+          <div class="lang-list">
+            <div class="lang-item">
+              <span class="lang-flag">🇦🇷</span>
+              <span class="lang-code">ES</span>
+              <span class="lang-level">Nativo</span>
+            </div>
+            <div class="lang-item">
+              <span class="lang-flag">🇧🇷</span>
+              <span class="lang-code">PT</span>
+              <span class="lang-level">Nativo</span>
+            </div>
+            <div class="lang-item">
+              <span class="lang-flag">🇺🇸</span>
+              <span class="lang-code">EN</span>
+              <span class="lang-level">Avanzado</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- EDUCATION — 1col -->
+      <div class="card card-education">
+        <div class="card-inner card-inner--bottom">
+          <span class="section-label">Educación</span>
+          <div class="edu-list">
+            <div class="edu-item">
+              <div class="edu-info">
+                <h4>Ing. de Software</h4>
+                <p>Siglo 21 · 2023–2026</p>
+                <span class="edu-badge progress">Último año</span>
+              </div>
+            </div>
+            <div class="edu-item">
+              <div class="edu-info">
+                <h4>Analista de Software</h4>
+                <p>Título intermedio</p>
+                <span class="edu-badge done">Completado</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ═══ ROW 4: Tech Stack marquee ═══ -->
+
+      <!-- MARQUEE — 4col -->
+      <div class="card card-marquee col-4">
         <div class="card-inner">
           <div class="marquee-label">Tech Stack</div>
           <div class="marquee-wrapper">
@@ -251,64 +232,16 @@
         </div>
       </div>
 
-      <!-- ═══ ROW 5-6: Projects ═══ -->
-
-      <!-- PROJECT 1 — 2col × 2row -->
-      <div class="card card-project col-2 row-2" id="projects">
-        <div class="card-inner">
-          <div class="project-image-wrap">
-            <img src="assets/images/automation.png" alt="Automatización Recibos de Sueldo">
-            <span class="project-badge dev">En desarrollo</span>
-          </div>
-          <div class="project-info">
-            <h3 class="project-title">Automatización Recibos de Sueldo</h3>
-            <p class="project-desc">
-              Sistema de automatización con n8n para el procesamiento y distribución inteligente 
-              de recibos de sueldo. Workflows que eliminan tareas manuales repetitivas.
-            </p>
-            <div class="project-tags">
-              <span>n8n</span>
-              <span>Node.js</span>
-              <span>APIs REST</span>
-              <span>Workflows</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- PROJECT 2 — 2col × 2row -->
-      <div class="card card-project col-2 row-2">
-        <div class="card-inner">
-          <div class="project-image-wrap">
-            <img src="assets/images/turistapp.png" alt="Turistapp">
-            <span class="project-badge soon">Próximamente</span>
-          </div>
-          <div class="project-info">
-            <h3 class="project-title">Turistapp</h3>
-            <p class="project-desc">
-              Proyecto de tesis — Aplicación de turismo para conectar viajeros con experiencias 
-              locales. En fase de documentación y planificación técnica.
-            </p>
-            <div class="project-tags">
-              <span>Tesis</span>
-              <span>UX/UI</span>
-              <span>Mobile</span>
-              <span>Full Stack</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- ═══ ROW 7-8: Experience + Contact ═══ -->
+      <!-- ═══ ROW 5-6: Experience + Contact ═══ -->
 
       <!-- EXPERIENCE — 2col × 2row -->
-      <div class="card card-experience col-2 row-2" id="experience">
-        <div class="card-inner">
-          <span class="exp-label">Experiencia</span>
+      <div class="card card-experience col-2 row-2">
+        <div class="card-inner card-inner--bottom">
+          <span class="section-label">Experiencia</span>
           <div class="exp-timeline">
             <div class="exp-item">
               <div class="exp-dot-line">
-                <div class="exp-dot"></div>
+                <div class="exp-dot exp-dot--current"></div>
                 <div class="exp-line"></div>
               </div>
               <div class="exp-content">
@@ -343,9 +276,8 @@
       </div>
 
       <!-- CONTACT — 2col × 2row -->
-      <div class="card card-contact col-2 row-2" id="contact">
-        <div class="card-inner">
-          <span class="contact-label">Contacto</span>
+      <div class="card card-contact col-2 row-2">
+        <div class="card-inner card-inner--bottom">
           <h2 class="contact-heading">
             <span class="gradient">Hablemos.</span>
           </h2>
